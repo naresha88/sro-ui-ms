@@ -20,11 +20,9 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Sales Request ID</th>
-                  <th scope="col">Order Candidate ID</th>
                   <th scope="col">Sales Application</th>
-                  <th scope="col">Factory Application</th>
-                  <th scope="col">Sales Request Status</th>
-                  <th scope="col">Order Candidate Status</th>
+                  <th scope="col">Start Date</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Details</th>
                 </tr>
               </thead>
@@ -32,16 +30,14 @@
                 <tr *ngFor="let order of orders; let i = index;">
                   <th scope="row">{{i+1}}</th>
                   <td>{{order.salesRequestId}}</td>
-                  <td>{{order.orderCandidateId}}</td>
                   <td>{{order.salesApplication}}</td>
-                  <td>{{order.factoryApplication}}</td>
-                  <td>{{order.salesRequestStatus}}</td>
-                  <td>{{order.orderCandidateStatus}}</td>
-                  <th scope="col"><button type="button" class="btn btn-primary" (click)="onSelectOrder()">Details</button></th>
+                  <td>{{order.startDate}}</td>
+                  <td>{{order.status}}</td>
+                  <th scope="col"><button type="button" class="btn btn-primary" (click)="onSelectOrder(order)">Details</button></th>
                 </tr>                
               </tbody>
           </table>
       </div>
   </div>
-  <sro-order-details (goBack)="onGoBack()" *ngIf="selectedOrder"></sro-order-details>
+  <sro-order-details [selectedOrder]="selectedOrder" (goBack)="onGoBack()" *ngIf="selectedOrder"></sro-order-details>
 </div>

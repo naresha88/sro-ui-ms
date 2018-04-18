@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { OrderCandidate } from '../../model/order-candidate.model';
 
 @Component({
   selector: 'sro-order-details',
@@ -7,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class OrderDetailsComponent implements OnInit {
 
+  @Input('selectedOrder') selectedOrder : OrderCandidate;
   @Output() goBack = new EventEmitter();
 
   constructor() { }

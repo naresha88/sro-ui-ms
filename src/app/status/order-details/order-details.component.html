@@ -1,14 +1,37 @@
-<div class="column-right order-details" *ngIf="!selectedOrder">
+<div class="column-right order-details">
   <h3>Sales Request Order Status</h3>
   <hr>
-  <h4>Order Details</h4>
+  <h4>Sales Request Details</h4>
   <div class="content-order-detials">
       <div><span class="sro-input-label">Sales Request ID: </span><span class="sro-input-value">cart-136</span></div>
-      <div><span class="sro-input-label">Order Candidate ID: </span><span class="sro-input-value">4651</span></div>
       <div><span class="sro-input-label">Sales Application: </span><span class="sro-input-value">Sales Express</span></div>
-      <div><span class="sro-input-label">Factory Application: </span><span class="sro-input-value">OMX</span></div>
-      <div><span class="sro-input-label">Sales Request Status: </span><span class="sro-input-value">Submitted</span></div>
-      <div><span class="sro-input-label">Order Candidate Status: </span><span class="sro-input-value">In Progress</span></div>
+      <div><span class="sro-input-label">Start Date: </span><span class="sro-input-value">04/16/2018</span></div>
+      <div><span class="sro-input-label">Status: </span><span class="sro-input-value">In Progress</span></div>
+  </div>
+  <hr>
+  <div class="content-order-candidate-table">
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Order Candidate ID</th>
+            <th scope="col">Factory Application</th>
+            <th scope="col">Released Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orderCandidate of selectedOrder.orderCandidates; let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{orderCandidate.orderCandidateId}}</td>
+            <td>{{orderCandidate.factoryApplication}}</td>
+            <td>{{orderCandidate.releasedDate}}</td>
+            <td>{{orderCandidate.status}}</td>
+            <th scope="col"><button type="button" class="btn btn-primary" (click)="onSelectOrder()">Details</button></th>
+          </tr>                
+        </tbody>
+    </table>
   </div>
   <hr>
   <div class="back-button"><button type="button" class="btn btn-primary" (click)="onGoBack()">Back</button></div>

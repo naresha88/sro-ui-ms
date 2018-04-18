@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SalesRequest } from '../model/sales-request.model';
+import { OrderCandidate } from '../model/order-candidate.model';
 
 @Component({
   selector: 'sro-status',
@@ -7,62 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
-  selectedOrder = '';
-
-  orders = [
-    {
-      salesRequestId: 'cart-129',
-      orderCandidateId: '4645',
-      salesApplication: 'Sales Express',
-      factoryApplication: 'OMX',
-      salesRequestStatus: 'Submitted',
-      orderCandidateStatus: 'Submitted'
-    },
-    {
-      salesRequestId: 'cart-131',
-      orderCandidateId: '4647',
-      salesApplication: 'Sales Express',
-      factoryApplication: 'OMX',
-      salesRequestStatus: 'In Progress',
-      orderCandidateStatus: 'In Progress'
-    },
-    {
-      salesRequestId: 'cart-133',
-      orderCandidateId: '4648',
-      salesApplication: 'Sales Express',
-      factoryApplication: 'SSPP',
-      salesRequestStatus: 'Released',
-      orderCandidateStatus: 'Released'
-    },
-    {
-      salesRequestId: 'cart-135',
-      orderCandidateId: '4649',
-      salesApplication: 'ADOPT',
-      factoryApplication: 'EFMS',
-      salesRequestStatus: 'Failed',
-      orderCandidateStatus: 'Failed'
-    },
-    {
-      salesRequestId: 'cart-136',
-      orderCandidateId: '4651',
-      salesApplication: 'Sales Express',
-      factoryApplication: 'OMX',
-      salesRequestStatus: 'Completed',
-      orderCandidateStatus: 'Completed'
-    }
-  ]
+  selectedOrder : OrderCandidate = null;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelectOrder() {
-    this.selectedOrder = 'order1';
+  onSelectOrder(order) {
+    this.selectedOrder = order;
   }
 
   onGoBack() {
-    this.selectedOrder = '';
+    this.selectedOrder = null;
   }
+
+  orders : SalesRequest[] = [
+    new SalesRequest('Cart-129', 'Sales Express', '04/16/2018', 'Started', 
+      [new OrderCandidate('Oc-129', 'OMX', '04/16/2018', 'Released'), new OrderCandidate('Oc-129', 'OMX', '04/16/2018', 'Completed')]),
+    new SalesRequest('Cart-139', 'Sales Express', '04/16/2018', 'In Progress', 
+      [new OrderCandidate('Oc-139', 'OMX', '04/16/2018', 'Failed')]),
+    new SalesRequest('Cart-149', 'ADOPT', '04/16/2018', 'Completed', 
+      [new OrderCandidate('Oc-149', 'EFMS', '04/16/2018', 'Completed')])
+  ];
 
 }
