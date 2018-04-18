@@ -9,7 +9,7 @@ import { OrderCandidate } from '../model/order-candidate.model';
 })
 export class StatusComponent implements OnInit {
 
-  selectedOrder : OrderCandidate = null;
+  selectedOrder : SalesRequest = null;
 
   constructor() { }
 
@@ -26,11 +26,11 @@ export class StatusComponent implements OnInit {
 
   orders : SalesRequest[] = [
     new SalesRequest('Cart-129', 'Sales Express', '04/16/2018', 'Started', 
-      [new OrderCandidate('Oc-129', 'OMX', '04/16/2018', 'Released'), new OrderCandidate('Oc-129', 'OMX', '04/16/2018', 'Completed')]),
+      [new OrderCandidate('Oc-129', 'OMX', '04/16/2018', 'Released', null), new OrderCandidate('Oc-129', 'OMX', '04/16/2018', 'Completed', null)], null),
     new SalesRequest('Cart-139', 'Sales Express', '04/16/2018', 'In Progress', 
-      [new OrderCandidate('Oc-139', 'OMX', '04/16/2018', 'Failed')]),
+      [new OrderCandidate('Oc-139', 'OMX', '04/16/2018', 'Failed', null)], null),
     new SalesRequest('Cart-149', 'ADOPT', '04/16/2018', 'Completed', 
-      [new OrderCandidate('Oc-149', 'EFMS', '04/16/2018', 'Completed')])
+      [new OrderCandidate('Oc-149', 'EFMS', '04/16/2018', 'Completed', null)], null)
   ];
 
 }

@@ -9,6 +9,7 @@ import { StatusComponent } from './status/status.component';
 import { AuditTrailComponent } from './audit-trail/audit-trail.component';
 import { DroolsComponent } from './drools/drools.component';
 import { OrderDetailsComponent } from './status/order-details/order-details.component';
+import { AuditTrailDetailsComponent } from './audit-trail/audit-trail-details/audit-trail-details.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { OrderDetailsComponent } from './status/order-details/order-details.comp
     StatusComponent,
     AuditTrailComponent,
     DroolsComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    AuditTrailDetailsComponent
   ],
   imports: [
     BrowserModule

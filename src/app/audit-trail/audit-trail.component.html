@@ -10,7 +10,7 @@
           <button type="button" class="btn btn-primary">Search</button>
       </div>
   </div>
-  <div class="column-right">
+  <div class="column-right" *ngIf="!selectedOrder">
       <h3 style="color: #EF6F00;">Sales Request Audit Trail</h3>
       <hr>
       <h4 style="color: #067AB4;">Orders</h4>
@@ -21,18 +21,21 @@
                   <th scope="col">#</th>                  
                   <th scope="col">Sales Request ID</th>
                   <th scope="col">Sales Request Creation Date</th>
+                  <th scope="col">Status</th>
                   <th scope="col">Audit Trail</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Cart-149</td>
-                  <td>04/16/2018</td>
-                  <td><button type="button" class="btn btn-primary" (click)="onSelectOrder()">Audit Trail</button></td>
+                <tr *ngFor="let order of orders; let i = index;">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{order.salesRequestId}}</td>
+                    <td>{{order.startDate}}</td>
+                    <td>{{order.status}}</td>
+                    <th scope="col"><button type="button" class="btn btn-primary" (click)="onAuditTrail(order)">Audit Trail</button></th>
                 </tr>
               </tbody>
           </table>
       </div>
   </div>
+  <sro-audit-trail-details [selectedOrder]="selectedOrder" (goBack)="onGoBack()" *ngIf="selectedOrder"></sro-audit-trail-details>
 </div>
