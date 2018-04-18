@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+
+body {
+	margin:0px auto;
+	padding:0;
+	background: #F3F3F3;
+	font-family: "Source Sans Pro","sans-serif";
+	font-size: 1.0em;
+    color:#666;
+	height: 100%;
+}
+
+.sro-home {
+    padding: 20px 20px 0px 20px;
+}
+

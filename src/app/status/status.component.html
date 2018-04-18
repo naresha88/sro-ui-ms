@@ -1,0 +1,47 @@
+<div class="sro-status">
+  <div class="column-left">
+      <div class="status-type">Order Status</div>
+      <div class="order-search">
+          <label class="label-text" for="order-input"> Search Orders: </label>
+          <div class="order-search-input">
+              <input id="order-input" type="text" class="form-control" placeholder="Search by Order Number">
+              <span id="order-search-icon" class="icon-search"></span>
+          </div>
+          <button type="button" class="btn btn-primary">Search</button>
+      </div>
+  </div>
+  <div class="column-right order-list" *ngIf="!selectedOrder">
+      <h3>Sales Request Order Status</h3>
+      <hr>
+      <h4>Orders</h4>
+      <div class="content-table">
+          <table class="table table-hover table-striped table-bordered">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Sales Request ID</th>
+                  <th scope="col">Order Candidate ID</th>
+                  <th scope="col">Sales Application</th>
+                  <th scope="col">Factory Application</th>
+                  <th scope="col">Sales Request Status</th>
+                  <th scope="col">Order Candidate Status</th>
+                  <th scope="col">Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orders; let i = index;">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{order.salesRequestId}}</td>
+                  <td>{{order.orderCandidateId}}</td>
+                  <td>{{order.salesApplication}}</td>
+                  <td>{{order.factoryApplication}}</td>
+                  <td>{{order.salesRequestStatus}}</td>
+                  <td>{{order.orderCandidateStatus}}</td>
+                  <th scope="col"><button type="button" class="btn btn-primary" (click)="onSelectOrder()">Details</button></th>
+                </tr>                
+              </tbody>
+          </table>
+      </div>
+  </div>
+  <sro-order-details (goBack)="onGoBack()" *ngIf="selectedOrder"></sro-order-details>
+</div>

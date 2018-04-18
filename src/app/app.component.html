@@ -1,0 +1,7 @@
+<sro-header (tabChange)="tabChanged($event)"></sro-header>
+<sro-home *ngIf="activeTab == 'home'"></sro-home>
+<sro-status *ngIf="activeTab == 'status'"></sro-status>
+<sro-audit-trail *ngIf="activeTab == 'audit-trail'"></sro-audit-trail>
+<sro-drools *ngIf="activeTab == 'sro-drools'"></sro-drools>
+
+

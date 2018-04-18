@@ -1,0 +1,38 @@
+<div class="sro-audit-trail">
+  <div class="column-left">
+      <div class="status-type">Audit Trail</div>
+      <div class="order-search">
+          <label class="label-text" for="order-input"> Search Orders: </label>
+          <div class="order-search-input">
+              <input id="order-input" type="text" class="form-control" placeholder="Search by Order Number">
+              <span id="order-search-icon" class="icon-search"></span>
+          </div>
+          <button type="button" class="btn btn-primary">Search</button>
+      </div>
+  </div>
+  <div class="column-right">
+      <h3 style="color: #EF6F00;">Sales Request Audit Trail</h3>
+      <hr>
+      <h4 style="color: #067AB4;">Orders</h4>
+      <div class="content-table">
+          <table class="table table-hover table-striped table-bordered">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>                  
+                  <th scope="col">Sales Request ID</th>
+                  <th scope="col">Sales Request Creation Date</th>
+                  <th scope="col">Audit Trail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Cart-149</td>
+                  <td>04/16/2018</td>
+                  <td><button type="button" class="btn btn-primary" (click)="onSelectOrder()">Audit Trail</button></td>
+                </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

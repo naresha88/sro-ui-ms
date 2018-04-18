@@ -1,0 +1,62 @@
+.column-left {
+    width:25%;
+    height:812px;
+    float:left;
+    padding: 0px;
+    background-color: #F3F3F3;
+}
+
+.column-right {
+    width:75%;
+    height:812px;
+    float:left;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.status-type {
+    padding-left: 31px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: linear-gradient(to top, #EF6F00, #FCB314);
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Omnes_ATT II Medium', sans-serif;
+    font-size: 16pt;
+    text-shadow: none;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.order-search {
+    margin: 30px 15px;
+}
+
+.label-text {
+    font-size: 16pt;
+    color: #333333;
+    font-family: 'Omnes_ATT II Medium', sans-serif;
+    box-sizing: border-box;    
+}
+
+.order-search-input {
+    position: relative;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.application-btn {
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14pt;
+    font-weight: normal;
+    font-family: 'Omnes_ATT II Medium', sans-serif;
+    text-align: center;
+    text-shadow: none;
+}
+
+.orange-btn {
+    background: linear-gradient(to top, #EF6F00, #FCB314);
+    color: #FFFFFF;
+}
